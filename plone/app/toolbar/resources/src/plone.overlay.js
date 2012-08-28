@@ -196,7 +196,7 @@ $.plone.overlay.Overlay.prototype = {
 
     // disable all clicks on modal
     self._el.on('click', function(e) {
-      if ($(e.target).attr('type') !== 'file') {
+      if ($(e.target).attr('type') !== 'file' && $(e.target).attr('type') !== 'checkbox') {
         e.preventDefault();
       }
       e.stopPropagation();
