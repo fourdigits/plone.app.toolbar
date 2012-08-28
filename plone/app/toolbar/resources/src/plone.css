@@ -5049,12 +5049,8 @@ a.badge:hover {
 #plone-toolbar .dropdown-menu a img {
   padding-right: 3px;
 }
-#plone-toolbar .nav > li {
+#plone-toolbar .nav > li > div.one_item {
   padding: 10px 15px 10px;
-}
-#plone-toolbar .nav > li > a,
-#plone-toolbar .nav .divider-vertical {
-  padding: 0;
 }
 #plone-toolbar .state-private,
 #plone-toolbar .state-visible,
