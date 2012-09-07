@@ -21,17 +21,18 @@
 
         <ul class="nav pull-right">
           <li tal:repeat="item view/contentmenu"
-              tal:attributes="class string:dropdown ${item/klass|nothing}; id item/id|nothing;">
-            <a tal:condition="python:repeat['item'].length() > 1"
+              tal:attributes="class string:dropdown ${item/klass|nothing}; id item/id|nothing;"
+              tal:define="repeatItem python: repeat['item']; length repeatItem/length">
+            <a tal:condition="python:length > 1"
                 href="#" class="dropdown-toggle" data-toggle="dropdown"
                tal:attributes="href item/action; target item/link_target|nothing;">
               <span tal:content="item/title">Link Title</span>
               <span tal:condition="python:'extra' in item and 'stateTitle' in item['extra']"
                     tal:attributes="class item/extra/class"
                     tal:content="item/extra/stateTitle">Private</span>
-              <b tal:condition="python:repeat['item'].length() > 1" class="caret" />
+              <b tal:condition="python:length > 1" class="caret" />
             </a>
-            <div class="one_item" tal:condition="python:repeat['item'].length() == 1">
+            <div class="one_item" tal:condition="python:item == 1">
               <span tal:content="item/title">Link Title</span>
               <span tal:condition="python:'extra' in item and 'stateTitle' in item['extra']"
                     tal:attributes="class item/extra/class"
