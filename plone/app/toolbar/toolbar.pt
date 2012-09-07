@@ -32,7 +32,7 @@
                     tal:content="item/extra/stateTitle">Private</span>
               <b tal:condition="python:length > 1" class="caret" />
             </a>
-            <div class="one_item" tal:condition="python:item == 1">
+            <div class="one_item" tal:condition="python:length == 1">
               <span tal:content="item/title">Link Title</span>
               <span tal:condition="python:'extra' in item and 'stateTitle' in item['extra']"
                     tal:attributes="class item/extra/class"
