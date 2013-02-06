@@ -5461,3 +5461,7 @@ a.badge:hover {
   height: 1.2em;
   width: 98%;
 }
+.nosub {
+  padding: 10px 15px 10px;
+  display: block;
+}

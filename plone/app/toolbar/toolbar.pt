@@ -24,13 +24,15 @@
               tal:attributes="class string:dropdown ${item/klass|nothing}; id item/id|nothing;"
               tal:define="repeatItem python: repeat['item']; length repeatItem/length">
             <a tal:condition="python:length > 1"
-                href="#" class="dropdown-toggle" data-toggle="dropdown"
+                href="#" class="dropdown-toggle" data-toggle="dropdown" tal:omit-tag="not: item/submenu"
                tal:attributes="href item/action; target item/link_target|nothing;">
+              <span tal:attributes="class python: item['submenu'] and '' or 'nosub';" tal:omit-tag="item/submenu">
               <span tal:content="item/title">Link Title</span>
               <span tal:condition="python:'extra' in item and 'stateTitle' in item['extra']"
                     tal:attributes="class item/extra/class"
                     tal:content="item/extra/stateTitle">Private</span>
-              <b tal:condition="python:length > 1" class="caret" />
+              <b tal:condition="python:length > 1" class="caret" tal:omit-tag="not: item/submenu" />
+              </span>
             </a>
             <div class="one_item" tal:condition="python:length == 1">
               <span tal:content="item/title">Link Title</span>
