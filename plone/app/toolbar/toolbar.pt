@@ -59,9 +59,6 @@
           <li class="dropdown" id="plone-personal-actions">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"
                tal:attributes="href view/user_homeurl">
-              <img src="#" alt="user portrait"
-                  tal:condition="view/user_portrait"
-                  tal:attributes="src view/user_portrait" />
               <span tal:content="view/user_displayname">Fullname</span>
               <b class="caret">
             </a>
