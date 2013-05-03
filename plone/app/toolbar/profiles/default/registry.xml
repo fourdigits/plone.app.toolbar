@@ -11,7 +11,6 @@
                 <element>toolbar</element>
             </element>
 
-            <!-- BBB: These bundle assignments should go into each theme's package -->
             <element key="Plone Classic Theme">
                 <element>tinymce</element>
                 <element>jquery</element>
